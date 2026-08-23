@@ -1,0 +1,35 @@
+name: CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: فحص واستخراج كود المستودع
+      uses: actions/checkout@v4
+
+    # مثال لإعداد Node.js (أزل أسطر التعليق # إذا كنت تستخدم React/Node/Vue)
+    # - name: إعداد بيئة Node.js
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: '20'
+    #     cache: 'npm'
+    # - run: npm ci
+    # - run: npm test
+
+    # مثال لإعداد Python (أزل أسطر التعليق # إذا كنت تستخدم Python/Django/FastAPI)
+    # - name: إعداد بيئة Python
+    #   uses: actions/setup-python@v5
+    #   with:
+    #     python-version: '3.11'
+    # - run: pip install -r requirements.txt
+    # - run: pytest
+
+    - name: التحقق من نجاح العملية
+      run: echo "تم التحقق من الكود بنجاح!"
